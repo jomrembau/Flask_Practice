@@ -6,12 +6,37 @@
     <title>Test</title>
 </head>
 <body>
-    <form>
+    <form action="http://www.google.com" method="get">
         <h1>Log in</h1>
-        <input type="email" name="" value="" > <br>
-        <input type="password" name="" value="" > <br>
-        <input type="submit" name="" value="Submit">
+        <label for="emailtag">Email:</label>
+        <input id="emailtag" type="email" name="" placeholder="sample@email.com" > <br>
 
+        <label for="passwordtag">Password:</label>
+        <input id="passwordtag" type="password" name="" placeholder="password" > <br>
+
+        <input type="submit" name="" value="Login">
+
+    </form>
+
+    <form action="http://www.yahoo.com" method="get">
+
+        <h3> Yes or no?</h3>
+        <label for="yes_radio">Yes</label>
+        <input id="yes_radio "type="radio" id="yes" name="yes_or_no" value="yes">
+        <label for="no_radio">No</label>
+        <input type="radio" id="no" name="yes_or_no" value="no">
+
+        <h3> Select </h3>
+        
+        <select name="rating">
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Bad">Bad</option>
+        </select>
+
+        <h3> Comment: </h3>
+        <textarea name="comment" rows="5" cols="30"></textarea>
+        <input type="submit" name="" value="Submit Comment">
     </form>
     
 </body>
