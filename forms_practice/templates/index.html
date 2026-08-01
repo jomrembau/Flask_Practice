@@ -1,0 +1,17 @@
+<p>
+    {% if breed %}
+    The breed is {{breed}}.
+    update below:
+
+    {% else %}
+
+    Enter breed:
+
+    {% endif %}
+</p>
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.breed.label }} {{ form.breed() }}
+    {{ form.submit() }}
+</form>

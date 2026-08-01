@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = "mysecretkey"
 
 class InfoForm(FlaskForm):
-    breed = StringField("This is a stringfield.")
+    breed = StringField("Breed Stringfield")
     submit = SubmitField("Submit")
 
 @app.route("/",methods=["GET","POST"])
@@ -20,7 +20,7 @@ def index():
         breed = form.breed.data
         form.breed.data = ""
 
-    return render_template("home.html",form=form, breed=breed)
+    return render_template("index.html",form=form, breed=breed)
 
 
 
