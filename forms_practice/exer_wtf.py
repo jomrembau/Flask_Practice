@@ -10,7 +10,7 @@ app.config["SECRET_KEY"] = "mysecretkey"
 class InfoForm(FlaskForm):
     breed = StringField("Breed?", validators=[DataRequired()])
     neuter = BooleanField("neutered?")
-    mood = RadioField("Theme?",
+    mood = RadioField("Mood?",
                       choices=[("mood_one","happy"),("mood_two","excited")])
     food_choice = SelectField("Pick Favorite food:", choices=[("ch","chicken"),("bf","beef"),("fish","Fish")])
     feedback = TextAreaField()
