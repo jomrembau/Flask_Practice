@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Thank you, {{session["name"]}}!</h1>
+
+<h2> We value your feedback.</h2>
+<p> {{session["feedback"]}}</p>
+{% endblock  %}
