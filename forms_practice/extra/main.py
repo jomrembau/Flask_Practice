@@ -1,4 +1,4 @@
-from flask import Flask, render_template,session, url_for, redirect
+from flask import Flask, render_template,session, url_for, redirect, flash
 from forms import  WelcomeForm
 
 app = Flask(__name__)
@@ -12,6 +12,8 @@ def index():
     if form.validate_on_submit():
         session["name"] = form.name.data
         session["feedback"] = form.feedback.data
+
+        flash(f"Thank you,{session["name"]}!")
 
         return redirect(url_for("registered"))
 

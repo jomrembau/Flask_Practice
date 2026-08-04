@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+
+{% for mess in get_flashed_messages() %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        {{ mess }}
+    </div>
+
+{% endfor %}
+
 <h1>Thank you, {{session["name"]}}!</h1>
 
 <h2> We value your feedback.</h2>
