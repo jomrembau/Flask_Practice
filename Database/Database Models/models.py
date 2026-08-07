@@ -7,22 +7,33 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///"+os.path.join(basedir,"data.sqlite")
+app.config["SQLALCHEMY_DATABASE_URI"] = \
+    "sqlite:///" + os.path.join(basedir, "data.sqlite")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-Migrate(app,db)
+Migrate(app, db)
 
-class Puppies(db.Model):
+
+class Puppy(db.Model):
     __tablename__ = "puppies"
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
-    toys = db.relationship("Toy", backref="puppy", lazy="dynamic")
-    # uselist=False because each puppy can have only one owner (one-to-one relationship)
-    owner = db.relationship("Owner",backref="puppy", uselist=False)
 
+    toys = db.relationship(
+        "Toy",
+        backref="puppy",
+        lazy="dynamic"
+    )
+
+    # Each puppy can have only one owner
+    owner = db.relationship(
+        "Owner",
+        backref="puppy",
+        uselist=False
+    )
 
     def __init__(self, name):
         self.name = name
@@ -44,8 +55,11 @@ class Toy(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     item_name = db.Column(db.Text)
-    #From Puppy Class
-    puppy_id = db.Column(db.Integer,db.ForeignKey("puppies.id"))
+
+    puppy_id = db.Column(
+        db.Integer,
+        db.ForeignKey("puppies.id")
+    )
 
     def __init__(self, item_name, puppy_id):
         self.item_name = item_name
@@ -56,13 +70,17 @@ class Owner(db.Model):
     __tablename__ = "owners"
 
     id = db.Column(db.Integer, primary_key=True)
-    owner_name = db.Column(db.Text)
-    puppy_id = db.Column(db.Integer, db.ForeignKey("puppies.id"))
+    name = db.Column(db.Text)
 
-    def __init__(self, item_name, puppy_id):
-        self.item_name = item_name
+    puppy_id = db.Column(
+        db.Integer,
+        db.ForeignKey("puppies.id")
+    )
+
+    def __init__(self, name, puppy_id):
+        self.name = name
         self.puppy_id = puppy_id
 
 
 if __name__ == "__main__":
-     app.run(debug=True)
+    app.run(debug=True)
