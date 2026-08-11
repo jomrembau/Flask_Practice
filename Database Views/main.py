@@ -30,7 +30,7 @@ class Laptop(db.Model):
 
 @app.route("/")
 def index():
-    return render_template("home.html")
+    return render_template("index.html")
 
 @app.route("/add",methods=["GET","POST"])
 def add_to_list():
@@ -64,7 +64,7 @@ def delete_from_list():
         db.commit()
 
         return redirect(url_for("laptop_list"))
-    
+
     return render_template("delete.html",form=form)
 
 if __name__ == "__main__":
