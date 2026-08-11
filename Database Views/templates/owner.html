@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container my-5"> <div class="p-5 text-center bg-body-tertiary rounded-3"> <h1 class="text-body-emphasis">Add Owner Page!</h1>
+        <p class="lead"> Add owner. Enter ID</p>
+        <form method="POST">
+            {{ form.hidden_tag()}}
+            {{ form.id.label }} {{ form.id()}}
+            {{ form.owner.label }} {{ form.owner()}}
+            {{ form.submit()}}
+
+        </form></div> </div>
+{% endblock %}

@@ -1,5 +1,5 @@
 import os
-from forms import AddForm, DelForm
+from forms import AddForm, DelForm, AddOwner
 from flask import Flask,render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -20,12 +20,14 @@ class Laptop(db.Model):
     __tablename__ = "laptop"
     id = db.Column(db.Integer, primary_key=True)
     model = db.Column(db.Text)
+    owner = db.Column(db.Integer)
 
-    def __init__(self,model):
+    def __init__(self,model, owner="No owner"):
         self.model = model
+        self.owner = owner
 
     def __repr__(self):
-        return f"Laptop ID: {self.id} | Laptop model: {self.model}"
+        return f"Laptop ID: {self.id} | Laptop model: {self.model} | Owner: {self.owner}"
 
 
 @app.route("/")
@@ -66,6 +68,23 @@ def delete_from_list():
         return redirect(url_for("laptop_list"))
 
     return render_template("delete.html",form=form)
+
+@app.route("/owner",methods=["GET","POST"])
+def add_owner():
+    form=AddOwner()
+
+    if form.validate_on_submit():
+        laptop_id = form.id.data
+        owner = form.owner.data
+
+        laptop = db.session.get(Laptop, laptop_id)
+        laptop.owner = owner
+        db.session.commit()
+
+        return redirect(url_for("laptop_list"))
+
+    return render_template("owner.html",form=form)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
