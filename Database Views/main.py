@@ -61,7 +61,7 @@ def delete_from_list():
         laptop_id = form.id.data
         laptop = Laptop.query.get(laptop_id)
         db.session.delete(laptop)
-        db.commit()
+        db.session.commit()
 
         return redirect(url_for("laptop_list"))
 
