@@ -1,4 +1,4 @@
-from myproject import db
+from myproject import db, app
 
 class Laptop(db.Model):
     __tablename__ = "laptop"
