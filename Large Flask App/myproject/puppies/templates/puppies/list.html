@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container my-5"> <div class="p-5 text-center bg-body-tertiary rounded-3"> <h1 class="text-body-emphasis">List Page</h1>
+    <p class="lead">List of Laptops</p> </div> </div>
+        <ul> {% for laptop in laptops %}
+            <li>{{laptop}}</li>
+            {% endfor %}
+        </ul>
+
+{% endblock %}
