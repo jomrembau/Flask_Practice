@@ -14,13 +14,30 @@
     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
         <li><a href="{{url_for('home')}}" class="nav-link px-2 link-secondary">Home</a></li>
         <li><a href="#" class="nav-link px-2">Students</a></li>
-        <li><a href="#" class="nav-link px-2">Pricing</a></li>
+        <li><a href="{{url_for('students.add_to_list')}}" class="nav-link px-2">Add</a></li>
         <li><a href="#" class="nav-link px-2">FAQs</a></li>
         <li><a href="{{url_for('about')}}" class="nav-link px-2">About</a></li>
     </ul>
     <div class="col-md-3 text-end">
         <button type="button" class="btn btn-outline-primary me-2">Login</button>
         <button type="button" class="btn btn-primary">Sign-up</button> </div> </header> </div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="container">
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert">
+                    </button>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 
 {% block content %}
 {% endblock %}
