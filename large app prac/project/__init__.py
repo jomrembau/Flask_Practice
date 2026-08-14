@@ -15,7 +15,4 @@ db = SQLAlchemy(app)
 
 Migrate(app,db)
 
-from project import views
-
-from project.students import students_blueprint
-app.register_blueprint(students_blueprint)
+from project import models
