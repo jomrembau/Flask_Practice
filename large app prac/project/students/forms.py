@@ -6,3 +6,6 @@ class AddForm(FlaskForm):
     class_section = StringField("Class")
     add_student = SubmitField("Add Student")
 
+class DeleteForm(FlaskForm):
+    student_id = IntegerField("Student ID")
+    delete_student = SubmitField("Delete Student")
