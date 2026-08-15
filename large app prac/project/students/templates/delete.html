@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="my-5"> <div class="p-5 text-center bg-body-tertiary"> <div class="container py-5"> <h1 class="text-body-emphasis">Add Student</h1>
+    <div class="my-5"> <div class="p-5 text-center bg-body-tertiary"> <div class="container py-5"> <h1 class="text-body-emphasis">Delete Student</h1>
         <form method="POST">
             {{ form.hidden_tag() }}
-            {{ form.student_name.label }} {{ form.student_name() }}
-            {{ form.class_section.label }} {{ form.class_section() }}
-            {{ form.add_student() }}
+            {{ form.student_id.label }} {{ form.student_id() }}
+            {{ form.delete_student() }}
 
         </form>
 
