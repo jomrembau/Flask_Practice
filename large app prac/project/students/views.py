@@ -40,4 +40,9 @@ def delete_student():
 
     return render_template("delete.html", form=form)
 
+@student_blueprint.route("/student_list")
+def student_list():
+    students = Students.query.all()
+    return render_template("list.html", students=students)
+
 
