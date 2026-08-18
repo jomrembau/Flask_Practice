@@ -1,6 +1,6 @@
 from flask import render_template, url_for,redirect, flash
 from project import db
-from project.models import Students
+from project.models import Students, Course
 from project.students import student_blueprint
 from project.students.forms import AddForm, DeleteForm
 
@@ -9,11 +9,18 @@ from project.students.forms import AddForm, DeleteForm
 def add_student():
     form = AddForm()
 
+    form.course_id.choices = [
+        (course.course_id, course.course_name)
+        for course in Course.query.all()
+    ]
+
     if form.validate_on_submit():
         student_name = form.student_name.data
         class_section = form.class_section.data
+        course_id = form.course_id.data
 
         new_student = Students(student_name,class_section)
+        new_student.course_id = course_id
 
         db.session.add(new_student)
         db.session.commit()

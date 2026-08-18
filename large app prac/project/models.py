@@ -34,6 +34,9 @@ class Course(db.Model):
     students = relationship("Students",
                             back_populates="course")
 
+    def __repr__(self):
+        return f"Course ID: {self.course_id} | Course Name: {self.course_name}"
+
 @app.route("/")
 def index():
     return render_template("index.html")
