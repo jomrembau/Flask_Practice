@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="my-5"> <div class="p-5 text-center bg-body-tertiary"> <div class="container py-5"> <h1 class="text-body-emphasis">Course List</h1>
+        <ul> {% for course in courses %}
+            <li>{{course}}</li>
+            {% endfor %}
+        </ul>
+
+    </div> </div> </div>
+
+{% endblock %}

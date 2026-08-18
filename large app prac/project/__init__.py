@@ -18,5 +18,7 @@ Migrate(app,db)
 from project import models
 
 from project.students.views import student_blueprint
+from project.course.views import course_blueprint
 
 app.register_blueprint(student_blueprint)
+app.register_blueprint(course_blueprint)
