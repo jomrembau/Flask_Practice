@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e555ac1e-a8ab-40a3-a982-5601e7f3ba8a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/251889351ab3_student_table.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/versions/377b29901da6_course_table_added.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/course/templates/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/course/templates/course_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/course/templates/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/course/templates/course_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/course/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/course/templates/course_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/course/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/course/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/data.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/students/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/students/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/students/templates/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/students/templates/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/students/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/students/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/students/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/students/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="e555ac1e-a8ab-40a3-a982-5601e7f3ba8a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,15 +41,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/CC-Student/Desktop/Flask Practice/Flask_Practice/large app prac&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/CC-Student/Desktop"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\CC-Student\Desktop\Flask Practice\Flask_Practice\large app prac\project" />
