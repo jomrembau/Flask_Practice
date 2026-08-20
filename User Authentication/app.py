@@ -3,7 +3,6 @@ from flask import render_template, redirect,request,url_for,flash,abort
 from flask_login import login_user,login_required, logout_user
 from project.models import User
 from project.forms import LoginForm, RegistrationForm
-from flask_bcrypt import Bcrypt
 
 @app.route("/")
 def home():
