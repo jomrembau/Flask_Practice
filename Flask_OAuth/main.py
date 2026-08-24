@@ -1,4 +1,7 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Only include the next 2 lines when working locally.
 # Don't include them when deploying the website.
@@ -15,8 +18,8 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = "mysecretkey"
 
 blueprint = make_google_blueprint(
-    client_id="",
-    client_secret="",
+    client_id=os.getenv("GOOGLE_CLIENT_ID"),
+    client_secret=os.getenv("GOOGLE_CLIENT_SECRET"),
     offline=True, #Request offline access
     scope=["profile", "email"]
     )
@@ -46,3 +49,6 @@ def login():
     email = resp.json()["email"]
 
     return render_template("welcome.html", email=email)
+
+if __name__ == "__main__":
+    app.run()
