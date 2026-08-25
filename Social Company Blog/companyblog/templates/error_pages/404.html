@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container my-5"> <div class="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
+    <button type="button" class="position-absolute top-0 end-0 p-3 m-3 btn-close bg-secondary bg-opacity-10 rounded-pill" aria-label="Close"></button>
+    <img src="{{url_for('static', filename='images/ghost.png')}}">
+    <h1 class="text-body-emphasis">404 – This post ghosted you </h1> <p class="col-lg-6 mx-auto mb-4">
+Looks like this page left the company without saying goodbye.
+Head back home and pretend this never happened.
+</p> <a href="{{ url_for('core.index') }}" class="btn btn-primary px-5 mb-5">
+    Return to Home Page
+</a> </div> </div>
+
+{% endblock %}
+
