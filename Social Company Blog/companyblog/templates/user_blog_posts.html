@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container my-5"> <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <img src="{{url_for('static', filename='profile_pics/'+user.profile_image)}}" alt="profile photo" width="150">
+    <h1 class="text-body-emphasis">Welcome to the page for {{user.username}}!</h1> <p class="col-lg-8 mx-auto fs-5 text-muted">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque laboriosam officia possimus reprehenderit sunt! Alias, facere, molestias! Architecto dolor ea eaque eveniet exercitationem fugit itaque maxime numquam odit, rem veniam?
+</p> <div class="d-inline-flex gap-2 mb-5"> <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">
+Call to action
+<svg class="bi ms-2" width="24" height="24" aria-hidden="true"><use xlink:href="#arrow-right-short"></use></svg> </button> <button class="btn btn-outline-secondary btn-lg px-4 rounded-pill" type="button">
+Secondary link
+</button> </div> </div>
+
+{% for post in blog_posts.items %}
+    <h2><a href="{{url_for('blog_posts.blog_post', blog_post_id=post.id )}}">{{post.title}}</a></h2> <br>
+    Written By: <a href="{{ url_for('user.user_post', username=post.author.username) }}">{{ post.author.username }}</a> <br>
+    <p class="text-muted">Published on: {{post.date.strftime("%Y-%m-%d")}}</p> <br>
+    <p> {{post.text}}</p> <br>
+{% endfor %}
+
+    </div>
+
+<nav aria-label="...">
+  <ul class="pagination">
+{% for page_num in blog_posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+
+    {% if blog_posts.page == page_num %}
+        <li class="page-item active">
+            <a class="page-link"
+               href="{{ url_for('users.user_post', username=user.username, page=page_num) }}">
+                {{ page_num }}
+            </a>
+        </li>
+    {% else %}
+        <li class="page-item">
+            <a class="page-link"
+               href="{{ url_for('users.user_post', username=user.username, page=page_num) }}">
+                {{ page_num }}
+            </a>
+        </li>
+    {% endif %}
+
+{% endfor %}
+
+  </ul>
+</nav>
+
+
+{% endblock %}

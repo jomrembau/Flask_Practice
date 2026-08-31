@@ -53,31 +53,52 @@ def login():
 
     return render_template("login.html", form=form)
 
-@users.route("/account", methods=["GET","POST"])
+
+@users.route("/account", methods=["GET", "POST"])
 @login_required
 def account():
 
     form = UpdateUserForm()
-    if form.validate_on_submit():
 
-        if form.picture.data: # if user uploaded a photo. picture variable from forms.py
+    if form.validate_on_submit():
+        print("FORM VALID")
+        print("PICTURE:", form.picture.data)
+
+        if form.picture.data:
             username = current_user.username
-            pic = add_profile_pic(form.picture.data,username) # add_profile_pic method from picture_handler
+            pic = add_profile_pic(form.picture.data, username)
+
+            print("SAVED AS:", pic)
+
             current_user.profile_image = pic
 
         current_user.username = form.username.data
         current_user.email = form.email.data
+
         db.session.commit()
+
         flash("User Account updated")
-        return redirect(url_for("user.account"))
+
+        return redirect(url_for("users.account"))
+
+    # DEBUG: If POST was submitted but validation failed
+    if request.method == "POST":
+        print("FORM ERRORS:", form.errors)
 
     elif request.method == "GET":
         form.username.data = current_user.username
         form.email.data = current_user.email
 
-    profile_image = url_for("static", filename="profile_pics/"+ current_user.profile_image)
+    profile_image = url_for(
+        "static",
+        filename="profile_pics/" + current_user.profile_image
+    )
 
-    return render_template("account.html", profile_image=profile_image, form=form)
+    return render_template(
+        "account.html",
+        profile_image=profile_image,
+        form=form
+    )
 
 @users.route("/<username>")
 def user_posts(username):
