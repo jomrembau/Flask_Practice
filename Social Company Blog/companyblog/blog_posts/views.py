@@ -10,7 +10,7 @@ blog_posts = Blueprint("blog_posts",__name__)
 @blog_posts.route("/create", methods=["GET","POST"])
 @login_required
 def create_post():
-    form = BlogPostForm
+    form = BlogPostForm()
 
     if form.validate_on_submit():
         blog_post = BlogPost(title=form.title.data,
@@ -28,5 +28,16 @@ def create_post():
 
 
 #READ
+@blog_posts.route("/<int:blog_post_id>")
+def blog_post(blog_post_id):
+    blog_post= BlogPost.query.get_or_404(blog_post_id)
+    return render_template("blog_post.html", title=blog_post.title,
+                           date=blog_post.date,post=blog_post
+                           )
+
+
+
+
+
 #UPDATE
 #DALETE
