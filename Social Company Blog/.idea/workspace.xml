@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e552e5f-735d-4f74-82dd-2e648fd3ae5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/companyblog/static/profile_pics/default_profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/companyblog/templates/user_blog_posts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scoail Company Blog/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scoail Company Blog/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scoail Company Blog/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scoail Company Blog/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scoail Company Blog/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Scoail Company Blog/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyblog/data.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/data.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyblog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyblog/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/templates/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyblog/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyblog/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyblog/users/picture_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/users/picture_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyblog/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/companyblog/users/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="8e552e5f-735d-4f74-82dd-2e648fd3ae5b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
