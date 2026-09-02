@@ -16,7 +16,7 @@
             <li><a href="{{url_for('core.info')}}" class="nav-link px-2">Info</a></li>
             {% if current_user.is_authenticated %}
             <li><a href="{{url_for('users.account')}}" class="nav-link px-2">Account</a></li>
-            <li><a href="#" class="nav-link px-2">Create Post</a></li>
+            <li><a href="{{url_for('blog_posts.create_post')}}" class="nav-link px-2">Create Post</a></li>
             {% endif %}
         </ul> <div class="col-md-3 text-end">
 
