@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="my-5"> <div class="p-5 text-center bg-body-tertiary"> <div class="container py-5"> <h1 class="text-body-emphasis">Blog Post</h1>
+
+    <h1>{{title}}</h1> <br>
+    <h2>Written by: {{post.author.username}}</h2> <br>
+    <h3>Published: {{date}}</h3> <br>
+    <p>{{post}}</p>
+
+    {% if post.author == current_user %}
+        <div>
+            <a href="{{url_for('blog_posts.update', blog_post_id=post.id)}}">Update</a>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#del_modal">Delete</button>
+        </div>
+    {% endif %}
+</div>
+
+<div class="modal" tabindex="-1" id="del_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ </div> </div>
+
+{% endblock %}

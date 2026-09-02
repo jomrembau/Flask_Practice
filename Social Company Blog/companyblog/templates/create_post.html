@@ -2,4 +2,27 @@
 
 {% block content %}
 
+<div class="my-5"> <div class="p-5 text-center bg-body-tertiary"> <div class="container py-5"> <h1 class="text-body-emphasis">Create Post</h1>
+
+    <form method="POST">
+                    {{ form.hidden_tag() }}
+
+                    <div class="mb-3">
+                        {{ form.title.label(class="form-label") }}
+                        {{ form.title(class="form-control") }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.text.label(class="form-label") }}
+                        {{ form.text(class="form-control") }}
+                    </div>
+
+                    <div class="d-grid">
+                        {{ form.submit(class="btn btn-primary") }}
+                    </div>
+
+                </form>
+
+</div> </div> </div>
+
 {% endblock %}
